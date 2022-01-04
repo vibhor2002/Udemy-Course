@@ -6,7 +6,12 @@ int binarySearch(int a[], int n, int key)
     int s = 0, e = n - 1;
     while (s <= e)
     {
-        int mid = (s + e) / 2;
+        // int mid = (s + e) / 2;
+        // in case of integer overflow as the value of s+e can be greater 
+        // than int_max i.e 2^31-1 
+        // so in order to avoid negative indexes 
+        // this method is used
+        int mid = s + (e - s) / 2;
 
         if (a[mid] == key)
         {
