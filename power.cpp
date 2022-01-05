@@ -16,6 +16,8 @@ int power(int x,int n){
 
 int main()
 {
-    cout<<power(5,3);
+    int n,x;
+    cin>>x>>n; 
+    cout<<power(x,n);
     return 0;
 }
