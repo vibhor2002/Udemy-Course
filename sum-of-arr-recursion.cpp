@@ -10,6 +10,15 @@ int sumofArray(int a[],int n){
     return a[0]+sumofArray(a+1,n-1);
 }
 
+int sumofArray2(int a[],int n){
+    // Base Case
+    if(n==0){
+        return 0;
+    }
+
+    return a[n-1]+sumofArray2(a,n-1);
+}
+
 int main()
 {
     int n;
