@@ -25,6 +25,18 @@ bool func2(int a[],int n,int key){
 
 }
 
+bool func3(int a[],int n,int key,int i){
+    if(i==n){
+        return false;
+    }
+
+    if(a[i]==key){
+        return true;
+    }
+    return func3(a,n,key,i);
+
+}
+
 int main()
 {
     int n;
