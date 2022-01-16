@@ -1,5 +1,20 @@
 #include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
+
+int partition(int a[],int s,int e){
+    int i=s;
+    int pivot =a[e];
+    for (int j = s; j <= e-1; j++)
+    {
+        if(a[j]<pivot){
+            swap(a[i],a[j]);
+            i++;
+        }
+    }
+    swap(a[i],a[e]);
+    return i;
+}
 
 void quickSort(int a[],int s,int e){
     if(s>=e){
@@ -11,13 +26,12 @@ void quickSort(int a[],int s,int e){
     quickSort(a,p+1,e);
 }
 
-int partition(int a[],int s,int e){
-
-
-}
-
 int main()
 {
-    
+    int a[] = {2,3,7,1,4,9,2};
+    quickSort(a,0,6);
+    for(int i=0;i<7;i++){
+        cout<<a[i]<<" ";
+    }
     return 0;
 }
